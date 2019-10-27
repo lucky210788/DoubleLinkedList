@@ -27,7 +27,9 @@ class ListElement {
 
     cut(){
         this.setValue(null);
-        this.prev.setNext(null);
+        this.prev.setNext(this.getNext());
+        this.next.setPrev(this.getPrev());
+        this.setNext(null);
         this.setPrev(null);
     }
 
