@@ -40,10 +40,23 @@ class ListElement {
     }
 
     swap(element){
+        if(this.getPrev()){
+            this.prev.setNext(element);
+        }
+        if(this.getNext()){
+            this.next.setPrev(element);
+        }
+        if(element.getPrev()){
+            element.prev.setNext(this);
+        }
+        if(element.getNext()){
+            element.next.setPrev(this);
+        }
         let tempPrev = this.getPrev();
         let tempNext = this.getNext();
+
         this.setPrev(element.getPrev());
-        this.setNext(element.setNext());
+        this.setNext(element.getNext());
         element.setPrev(tempPrev);
         element.setNext(tempNext);
     }
