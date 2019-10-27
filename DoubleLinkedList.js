@@ -26,9 +26,15 @@ class ListElement {
     }
 
     cut(){
+        if (this.getPrev()) {
+            this.prev.setNext(this.getNext());
+        }
+
+        if (this.getNext()) {
+            this.next.setPrev(this.getPrev());
+        }
+
         this.setValue(null);
-        this.prev.setNext(this.getNext());
-        this.next.setPrev(this.getPrev());
         this.setNext(null);
         this.setPrev(null);
     }
