@@ -43,15 +43,19 @@ class ListElement {
         if(this.getPrev()){
             this.prev.setNext(element);
         }
+
         if(this.getNext()){
             this.next.setPrev(element);
         }
+
         if(element.getPrev()){
             element.prev.setNext(this);
         }
+
         if(element.getNext()){
             element.next.setPrev(this);
         }
+
         let tempPrev = this.getPrev();
         let tempNext = this.getNext();
 
