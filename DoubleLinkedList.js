@@ -25,7 +25,7 @@ class ListElement {
         this.next = element
     }
 
-    cut(){
+    cut() {
         if (this.getPrev()) {
             this.prev.setNext(this.getNext());
         }
@@ -39,20 +39,20 @@ class ListElement {
         this.setPrev(null);
     }
 
-    swap(element){
-        if(this.getPrev()){
+    swap(element) {
+        if (this.getPrev()) {
             this.prev.setNext(element);
         }
 
-        if(this.getNext()){
+        if (this.getNext()) {
             this.next.setPrev(element);
         }
 
-        if(element.getPrev()){
+        if (element.getPrev()) {
             element.prev.setNext(this);
         }
 
-        if(element.getNext()){
+        if (element.getNext()) {
             element.next.setPrev(this);
         }
 
